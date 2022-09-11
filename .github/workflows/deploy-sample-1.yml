@@ -47,6 +47,13 @@ jobs:
       - name: Terraform Apply
         run: terraform apply -auto-approve -input=false
 
+      - name: Terraform Apply
+        uses: alialaa/issue-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: Terraform results
+          body: ${{ steps.plan.outputs.stdout }}
+
       - name: Terraform Print Output
         run: |
           echo "${{ steps.plan.outputs.stdout }}"
