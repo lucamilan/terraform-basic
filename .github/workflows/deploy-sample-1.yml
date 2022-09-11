@@ -3,7 +3,10 @@ name: Terraform Sample 1
 env:
   tf_directory: sample-1
 
-on: [push]
+on:
+  push:
+    paths:
+      - 'sample-1/**'
 
 jobs:
   terraform:
