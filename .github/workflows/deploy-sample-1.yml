@@ -46,6 +46,8 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -auto-approve -input=false
+        env:
+          PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
 
       - name: Terraform Print Output
         run: echo "${process.env.PLAN}"
