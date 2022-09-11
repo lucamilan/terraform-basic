@@ -51,7 +51,7 @@ jobs:
         uses: alialaa/issue-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          title: Terraform results
-          body: "Terraform Format and Style 🖌`${{ steps.fmt.outcome }}\n${{ steps.plan.outputs.stdout }}"
+          title: Terraform results ${{ github.actor }}
+          body: "#### Terraform Format and Style 🖌${{ steps.fmt.outcome }}\n#### Terraform Initialization ⚙️${{ steps.init.outcome }}\n #### Terraform Plan 📖${{ steps.plan.outcome }}\n${{ steps.plan.outputs.stdout }}"
           assignees: |
               lucamilan
