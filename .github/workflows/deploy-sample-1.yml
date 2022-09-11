@@ -3,19 +3,7 @@ name: Terraform Sample 1
 env:
   tf_directory: sample-1
 
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - "${{env.tf_directory}}/**/*"
-
-  workflow_run:
-    workflows: ["build"]
-    branches: [main]
-    types:
-      - completed
-
+on: [push]
 
 jobs:
   terraform:
