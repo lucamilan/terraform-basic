@@ -52,6 +52,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: Terraform results ${{ github.actor }}
-          body: "#### Terraform Format and Style 🖌${{ steps.fmt.outcome }}\n#### Terraform Initialization ⚙️${{ steps.init.outcome }}\n #### Terraform Plan 📖${{ steps.plan.outcome }}\n${{ steps.plan.outputs.stdout }}"
+          body: "#### Initialization ⚙️${{ steps.init.outcome }}\n #### Plan 📖${{ steps.plan.outcome }}\n #### Validation 🤖 ${{ steps.validate.outcome }}\n### Plan ☄️ ${{steps.plan.outcome}}"
           assignees: |
               lucamilan
