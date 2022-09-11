@@ -50,4 +50,5 @@ jobs:
           PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
 
       - name: Terraform Print Output
-        run: echo "${process.env.PLAN}"
+        run: |
+          echo "${process.env.PLAN}"
