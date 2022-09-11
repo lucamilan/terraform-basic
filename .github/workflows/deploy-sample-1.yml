@@ -47,13 +47,11 @@ jobs:
       - name: Terraform Apply
         run: terraform apply -auto-approve -input=false
 
-      - name: Terraform Apply
+      - name: Terraform Create Issue
         uses: alialaa/issue-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: Terraform results
-          body: ${{ steps.plan.outputs.stdout }}
-
-      - name: Terraform Print Output
-        run: |
-          echo "${{ steps.plan.outputs.stdout }}"
+          body: "Terraform Format and Style 🖌`${{ steps.fmt.outcome }}\n${{ steps.plan.outputs.stdout }}"
+          assignees: |
+              lucamilan
